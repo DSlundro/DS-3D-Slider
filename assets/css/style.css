@@ -8,7 +8,7 @@ body{
     overflow: hidden;
     display: flex;
     background: #070716;
-    perspective: 1000px;
+    perspective: 800px;
     transform-style: preserve-3d;
 }
 
