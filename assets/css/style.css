@@ -8,14 +8,58 @@ body{
     overflow: hidden;
     display: flex;
     background: #070716;
-    perspective: 800px;
+    perspective: 1000px;
     transform-style: preserve-3d;
+}
+body{
+    background-image: url(../img/body-bg.webp);
+}
+#logo{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    margin: 25px;
+    z-index: 99;
+}
+
+#cards{
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    margin: 25px;
+    
+}
+.card{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.301);
+    background-color: rgba(71, 71, 71, 0.432);
+    margin: 9px 0;
+}
+.card img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: 0 0 5px white;
+}
+.card .name{
+    color: white;
+    font-size: 18px;
+}
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.582);
+    background-color: rgba(71, 71, 71, 0.747);
 }
 
 #drag, #spin{
     position: relative;
     display: flex;
     margin: auto;
+    padding: 100px 0px;
     transform-style: preserve-3d;
     transform: rotateX(-10deg);
 }
@@ -34,17 +78,23 @@ body{
 }
 
 #drag img:hover{
+    cursor: pointer;
     box-shadow: 0 0 15px #fffd;
     -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
 }
 
 #ground{
+    background-image: url(../img/ground-bg.webp);
     width: 900%;
     height: 900%;
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translate(-50%, -50%) rotateX(90deg);
+    filter:contrast(150%);
+    border-radius: 50%;
+    filter: brightness(50%);
+    z-index: 0;
 }
 
 @keyframes spin{
@@ -56,3 +106,5 @@ body{
     from{transform: rotateY(360deg);}
     to{transform: rotateY(0deg);}
 }
+
+

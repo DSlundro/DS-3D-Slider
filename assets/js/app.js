@@ -1,10 +1,9 @@
-let radius = 340;
+let radius = 360;
 let autoRotate = true;
-let rotateSpeed = -60;
+let rotateSpeed = 100;
 let imgWidth = 190;
 let imgHeight = 230
 
-setTimeout(init, 1000)
 
 let odrag = document.getElementById('drag');
 let ospin = document.getElementById('spin');
@@ -15,8 +14,11 @@ ospin.style.width = imgWidth + 'px';
 ospin.style.height = imgHeight + 'px';
 
 let ground = document.getElementById('ground');
-ground.style.width = radius * 3 + 'px';
-ground.style.height = radius * 3 + 'px';
+ground.style.width = radius * 20 + 'px';
+ground.style.height = radius * 20 + 'px';
+
+
+setTimeout(init, 1000)
 
 function init(delayTime){
     for (let i = 0; i < aEle.length; i++){
@@ -38,9 +40,9 @@ function playSpin(yes){
 };
 
 let sX, sY, nX, nY, desX = 0;
-desY = 0;
-tX = 0;
-tY = 10;
+let desY = 0;
+let tX = 0;
+let tY = 10;
 
 if(autoRotate){
     let animationName = (rotateSpeed > 0 ? 'spin' : 'spinReverse');
